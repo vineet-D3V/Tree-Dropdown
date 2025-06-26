@@ -23,8 +23,9 @@ yarn add sc-hierarchical-dropdown
 
 ```tsx
 import React, { useState } from 'react';
-import { HierarchicalDropdown, HierarchicalItem } from 'sc-hierarchical-dropdown';
-import 'sc-hierarchical-dropdown/dist/styles.css';  // Import styles
+import { HierarchicalDropdown } from 'sc-hierarchical-dropdown';
+import type { HierarchicalItem } from 'sc-hierarchical-dropdown';
+import 'sc-hierarchical-dropdown/dist/index.esm.css';  // Import styles
 
 const App = () => {
   const [selectedItem, setSelectedItem] = useState<HierarchicalItem | null>(null);
