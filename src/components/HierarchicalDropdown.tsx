@@ -148,7 +148,8 @@ const HierarchicalDropdown: React.FC<DropdownProps> = ({
           handleSelect(option);
         }
       };
-      const displayPath = path.length > 0 ? `${path.join(' / ')}${path.length > 0 ? ' / ' : ''}${option.name}` : option.name;
+      // Show the full path with the current item name
+      const displayPath = path.length > 0 ? `${path.join(' / ')} / ${option.name}` : option.name;
 
       return (
         <div

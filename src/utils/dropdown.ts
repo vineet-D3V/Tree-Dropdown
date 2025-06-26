@@ -13,11 +13,7 @@ export const flattenOptions = (
     result.push({ option, path: currentPath });
 
     if (option.children && option.children.length > 0) {
-      const newPath = [...currentPath];
-      if (option.name) {
-        newPath.push(option.name);
-      }
-      result.push(...flattenOptions(option.children, option, newPath));
+      result.push(...flattenOptions(option.children, option, currentPath));
     }
   });
 
@@ -32,6 +28,10 @@ export const filterOptions = (
 
   const flattened = flattenOptions(options);
   return flattened.filter(({ option, path }) => {
+    // Only include leaf nodes (nodes without children or with empty children array)
+    const isLeaf = !option.children || option.children.length === 0;
+    if (!isLeaf) return false;
+    
     const fullPath = [...path, option.name].join(' ').toLowerCase();
     return fullPath.includes(searchTerm.toLowerCase());
   });
