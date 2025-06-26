@@ -9,4 +9,5 @@ export interface DropdownProps {
   onSelect: (option: HierarchicalItem) => void;
   placeholder?: string;
   value?: HierarchicalItem | null;
+  maxWidth?: string;
 }
