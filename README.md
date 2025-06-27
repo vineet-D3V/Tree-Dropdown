@@ -14,18 +14,18 @@ A reusable React component for rendering hierarchical (tree) data in a searchabl
 ## Installation
 
 ```bash
-npm install sc-hierarchical-dropdown
+npm install react-hierarchical-dropdown
 # or
-yarn add sc-hierarchical-dropdown
+yarn add react-hierarchical-dropdown
 ```
 
 ## Usage
 
 ```tsx
 import React, { useState } from 'react';
-import { HierarchicalDropdown } from 'sc-hierarchical-dropdown';
-import type { HierarchicalItem } from 'sc-hierarchical-dropdown';
-import 'sc-hierarchical-dropdown/dist/index.esm.css';  // Import styles
+import { HierarchicalDropdown } from 'react-hierarchical-dropdown';
+import type { HierarchicalItem } from 'react-hierarchical-dropdown';
+import 'react-hierarchical-dropdown/dist/index.esm.css';  // Import styles
 
 const App = () => {
   const [selectedItem, setSelectedItem] = useState<HierarchicalItem | null>(null);
